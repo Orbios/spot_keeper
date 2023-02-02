@@ -1,0 +1,330 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "user_a@test.com",
+      "profile": {
+        "local": {
+          "firstName": "Adam",
+          "lastName": "Smith",
+          "password": "pas123",
+          "isActivated": true
+        }
+      }
+    },
+    {
+      "id": 2,
+      "email": "user_b@test.com",
+      "profile": {
+        "local": {
+          "firstName": "Bob",
+          "lastName": "Smith",
+          "password": "pas123",
+          "isActivated": true
+        }
+      }
+    }
+  ],
+  "lists": [
+    {
+      "id": 1,
+      "title": "Food",
+      "description": "Food description",
+      "imageUrl": "",
+      "ownerId": 1
+    },
+    {
+      "id": 2,
+      "title": "Co-workings",
+      "description": "Co-workings description",
+      "imageUrl": "",
+      "ownerId": 1
+    },
+    {
+      "id": 3,
+      "title": "SPA",
+      "description": "SPA description",
+      "imageUrl": "",
+      "ownerId": 1
+    },
+    {
+      "id": 4,
+      "title": "Yoga",
+      "description": "Yoga description",
+      "imageUrl": "",
+      "ownerId": 1
+    }
+  ],
+  "spots": [
+    {
+      "id": 1,
+      "title": "Seniman Coffee Studio",
+      "description": "Local food",
+      "listId": 1,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/yyiiEUSnHkMa35bJ8",
+      "ownerId": 1
+    },
+    {
+      "id": 2,
+      "title": "Taco & Grill Ubud",
+      "description": "Mexican food",
+      "listId": 1,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/eZMeTrERtujacxSy8",
+      "ownerId": 1
+    },
+    {
+      "id": 3,
+      "title": "Man Maru",
+      "description": "Japanese food",
+      "listId": 1,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/J7yPRFEQGfgGBkT1A",
+      "ownerId": 1
+    },
+    {
+      "id": 4,
+      "title": "Parq Ubud",
+      "description": "The biggest community center. Free co-working space",
+      "listId": 2,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/EM4SL2mXH2eXBtjH8",
+      "ownerId": 1
+    },
+    {
+      "id": 5,
+      "title": "Outpost Ubud Coworking",
+      "description": "Confy place to work",
+      "listId": 2,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/D4LQiNdvtSddi9Y76",
+      "ownerId": 1
+    },
+    {
+      "id": 6,
+      "title": "Bali Dacha",
+      "description": "Art&Spa Lounge Club in Bali",
+      "listId": 3,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/5NZxzVZmMgGiETKq7",
+      "ownerId": 1
+    },
+    {
+      "id": 7,
+      "title": "TEPLO CONCEPT",
+      "description": "Баня на дровах в самом сердце Убуда",
+      "listId": 3,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/d9rhsDAbbzHVwtWf6",
+      "ownerId": 1
+    },
+    {
+      "id": 8,
+      "title": "Hotstone Club",
+      "description": "RETREAT CENTER | WELLNESS | SPA & SAUNA",
+      "listId": 3,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/gjRXV3dWuqS1tg3Y9",
+      "ownerId": 1
+    },
+    {
+      "id": 9,
+      "title": "Hotel Tjampuhan Spa",
+      "description": "Positioned at the base of the valley mere metres away from the natural splendour of the river flow, Tjampuhan Spa is dedicated to the therapeutic properties of water. Composed of several semi-open treatment pavilions and an extraordinary hot/cold spring water Jacuzzi created within a mythical stone cavern, the spa has sourced a collection of Balinese healing and beauty treatments to alleviate the stresses of modern living. This tranquil setting evokes inner peace and overall wellness simply by re-introducing the basic attributes of Mother Nature and her bounty of herbal and flower essences.",
+      "listId": 3,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/4fTDBUH1HSzwkCk96",
+      "ownerId": 1
+    },
+    {
+      "id": 10,
+      "title": "Good Day Resto & Pool Bar",
+      "description": "Especially for those of you who want to get peace of mind and a relaxed body, then you can try the spa that we provide and is equipped with a Jacuzzi.",
+      "listId": 3,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/TnfTyqZRdgebYPBE8",
+      "ownerId": 1
+    },
+    {
+      "id": 11,
+      "title": "The Istana",
+      "description": "Biohacking & Meditation | Bali",
+      "listId": 3,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/Uq67e1tcL51UhFjF9",
+      "ownerId": 1
+    },
+    {
+      "id": 12,
+      "title": "Udara Bali Yoga Detox & Spa",
+      "description": "Featuring four beautiful yoga shalas (three with ocean view, one overlooking the ancient temples) and a beautiful Spa with water healing pool, finnish sauna, herbal steam room, hot Jacuzzi and ice water plunge as well as a meditation cave.",
+      "listId": 3,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/SrCENPcmNswhHKUT8",
+      "ownerId": 1
+    },
+    {
+      "id": 13,
+      "title": "Muka Concepts",
+      "description": "skin care > face & body spa > clothes",
+      "listId": 3,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/Uuah7ShULeQwuRbe8",
+      "ownerId": 1
+    },
+    {
+      "id": 14,
+      "title": "Dojo Bali",
+      "description": "A place to Connect, Work, Collaborate & Surf",
+      "listId": 2,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/LEGEGgYwNBNVEBCX8",
+      "ownerId": 1
+    },
+    {
+      "id": 15,
+      "title": "Outpost Canggu",
+      "description": "Surf, Sea and Startups",
+      "listId": 2,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/VBfPQJM9KdXF1ohR9",
+      "ownerId": 1
+    },
+    {
+      "id": 16,
+      "title": "Tropical Nomad Canggu",
+      "description": "Tropical Nomad is a co-working community of professionals, creatives and artists",
+      "listId": 2,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/x4YQUNKJfYU3QcmeA",
+      "ownerId": 1
+    },
+    {
+      "id": 17,
+      "title": "Genesis Creative Centre",
+      "description": "Genesis Creative Centre Bali was created to offer a unique facility that provides people with resourceful studios and incubating workspaces (private or shared studios). Complete with Film & Photography Studio, Music & Recording Studio, Art Studio as well as a Workshop & Meeting Room - we’ve made inter-disciplinary creation accessible and affordable.",
+      "listId": 2,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/skhw24kpwxqB4wzf6",
+      "ownerId": 1
+    },
+    {
+      "id": 18,
+      "title": "Kinship Studio Bali",
+      "description": "A place to gather, collaborate and create.",
+      "listId": 2,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/fjjfpvXGPeJpTYTM8",
+      "ownerId": 1
+    },
+    {
+      "id": 19,
+      "title": "Biliq Bali Cosharing Space",
+      "description": "People love our coworking area! Choose between outdoor seating or stay cool in our indoor air-conditioned area. Help yourself with a well kept pantry or get a double shot cappuccino from the cafe. In need of a break? Choose between taking a nap in our Zen Room, lounge by the dipping pool or take a smoke break at our dedicated smoking area: the park bench. Need to take that a private call or video chat? Our soundproofed Skype room is available, free of charge. Our entire area is well covered with high-speed Wifi that is emitted from multiple well-positioned Access Point. ",
+      "listId": 2,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/9gYKt8x2CsacQBL4A",
+      "ownerId": 1
+    },
+    {
+      "id": 20,
+      "title": "Hub Bali Coworking Legian",
+      "description": "Hub Bali offers more than a just coworking platform. We are a vibrant community that seeks to provide an affordable, comfortable, and inclusive coworking space in Bali and a living environment for people all around the world to be able to work, connect, share, empower and grow together while spending the time here in Bali. We have a range of memberships to suit your needs from a shared coworking space, premium private office in Bali, to a co-living package.  So whether you’re a professional freelancer looking to scale your network and business, a small-medium enterprise looking for a new private office, or perhaps a part of a multinational company setting up a satellite office, we can provide a space that perfectly suits your needs.",
+      "listId": 2,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/9Z56fsKAVSvcnoz89",
+      "ownerId": 1
+    },
+    {
+      "id": 21,
+      "title": "Uluwatu Hub",
+      "description": "Featuring an unique space with Balinese contemporary ornaments with blazing fiber optic internet both wireless and wired connectivity. It will be the perfect place for remote workers to collaborate and chill out at the same time.",
+      "listId": 2,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/AhCMJr7MrSpr5h218",
+      "ownerId": 1
+    },
+    {
+      "id": 23,
+      "title": "Wrkhub By Tutmak",
+      "description": "A US company with HQ in Madrid, CoworkIntel is made up of a multinational team with extensive experience in data procurement & powering, customer experience and SaaS development. We're commited to bringing our clients the most comprehensive & actionable business intelligence for optimal strategy & maximal revenue.",
+      "listId": 2,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/R7jjgMmC5bn2aAaT9",
+      "ownerId": 1
+    },
+    {
+      "id": 24,
+      "title": "BeLuna Coworking Bali",
+      "description": "Our mission is to connect people with the financial resources that help businesses grow. We're creating a community of freelancers and solopreneurs who want expert advice to grow their businesses. We believe in thinking outside the box and figuring out solutions. We're here to connect you with financial capital and banking support aligned to the way you work.",
+      "listId": 2,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/TehMXsU8WbBTGbjd7",
+      "ownerId": 1
+    },
+    {
+      "id": 25,
+      "title": "Yoga Barn",
+      "description": "Located in the heart of bustling downtown Ubud, The Yoga Barn is a welcoming tropical oasis that has been an anchor for the global yoga community since 2007, when it humbly opened its gates, with only one simple studio on the edge of a raging river. The spirit of The Yoga Barn is intrinsically led by the depth of Balinese culture & spirituality, blessed by the Hindu and animistic traditions of Bali, and embraced by the healing medicine of Ubud.",
+      "listId": 4,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/2yoWGu8i7wHQRqch9",
+      "ownerId": 1
+    },
+    {
+      "id": 26,
+      "title": "Radiantly Alive",
+      "description": "Radiantly Alive Yoga Studio in Ubud, Bali was founded in 2012. Five years later, the studio has enchanted the hearts of over 100,000 visitors. In late 2016, the studio came under the ownership of Rafael Corrochano and Jasmine Dañino. Captivated by the magic that is Radiantly Alive and Ubud, this husband and wife team are committed to continuing Radiantly Alive’s legacy of yoga, healing, and community, creating a home away from home for the thousands of people that visit every month. Experience a yoga studio that captures the enchantment of Bali with a foundation built in tradition and authenticity. Feel pampered by a staff and team that is 100% dedicated to uplifting all who wish to live a fuller, happier, healthier life. Explore our site to learn more about our yoga and movement classes, workshops, yoga teacher trainings and therapies.",
+      "listId": 4,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/4huo8oSqGpxdJ2hh7",
+      "ownerId": 1
+    },
+    {
+      "id": 27,
+      "title": "Ubud Yoga House",
+      "description": "Ubud Yoga House is a socially conscious business with a profit-sharing model that provides all teachers and full-time Indonesian employees a share in the profits of the company. The business model also supports the John Fawcett Foundation by sponsoring mobile eye clinics offering free eye care and cataract surgery for Indonesians living near Ubud. We strive to make a positive impact on the Indonesian society and economy.",
+      "listId": 4,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/ha7ywnGiB9UUh8Cg6",
+      "ownerId": 1
+    },
+    {
+      "id": 28,
+      "title": "Samadi Bali",
+      "description": "Samadi Bali is located in the heart of Canggu, close to the well-known Bali Echo beach. We have exciting schedules every day all day full of Yoga classes, workshops, events, Yoga training, breathwork, sound healing, dance and more. We offer individualized retreat packages, comfortable accommodation, healthy organic vegan and vegetarian food & holistic wellness treatments with space for groups and facilitators of teacher training in our private residency area. Samadi Bali brings in the best of national and international teachers, therapists, facilitators, chefs, artists and experts who have trained themselves extensively in a variety of different Programs, Practices, and Skills.  All of our team members at Samadi Bali bring a wealth of wisdom and experience with the eagerness to share their love and passion with you.",
+      "listId": 4,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/CftiMSncVA1HnfGUA",
+      "ownerId": 1
+    },
+    {
+      "id": 29,
+      "title": "Desa Seni",
+      "description": "Dedicated,  passionate  teachers leading classes in Vinyasa, Master Class, Hatha, Restorative, Yin, Alignment & Adjustment and Meditation. Open to the Kula (community)! Enjoy practicing in our open aired, tropical Bali studio.",
+      "listId": 4,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/w9q3mfvQ6sSLFnqY9",
+      "ownerId": 1
+    },
+    {
+      "id": 30,
+      "title": "Ashtanga Yoga Bali Research Center",
+      "description": "We empower our students with radiant health and well being to become ambassadors for traditional Ashtanga Yoga, Ayuverda and Meditation in the world.",
+      "listId": 4,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/FqQ4BQxat36yz3hu9",
+      "ownerId": 1
+    },
+    {
+      "id": 31,
+      "title": "Intuitive Flow",
+      "description": "A beautiful Yoga Studio in Ubud, Bali. Practice Yoga with breathtaking view in a quiet area in Penestanan.",
+      "listId": 4,
+      "imageUrl": "",
+      "mapLink": "https://goo.gl/maps/BZDWfuSkLFWGPxx8A",
+      "ownerId": 1
+    }
+  ]
+}

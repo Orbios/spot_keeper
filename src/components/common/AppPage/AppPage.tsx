@@ -46,7 +46,7 @@ function AppPage(props: Props) {
   }
 
   function getTitle() {
-    return props.title ? `Map Spots - ${props.title}` : 'Map Spots';
+    return props.title ? `Spot Keeper - ${props.title}` : 'Spot Keeper';
   }
 
   function render() {
