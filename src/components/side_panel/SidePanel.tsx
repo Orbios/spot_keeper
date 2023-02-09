@@ -13,6 +13,8 @@ import Navigation from './components/Navigation';
 
 import * as styled from './SidePanel.styled';
 
+import Logo from 'assets/logo.svg';
+
 const DEFAULT_LIST_TITLE = 'My List #';
 
 function SidePanel() {
@@ -87,7 +89,7 @@ function SidePanel() {
       <styled.wrapper fullHeight={mobileMenuVisible}>
         <styled.headerContainer>
           <styled.header>
-            <img alt="Logo" src="images/logo.svg" height="40" />
+            <img alt="Logo" src={Logo} height="40" />
             <styled.title>Spot Keeper</styled.title>
           </styled.header>
 

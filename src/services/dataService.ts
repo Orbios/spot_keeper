@@ -49,7 +49,7 @@ async function getLists(ownerId?: string): Promise<any[]> {
 
     return data;
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
     return [];
   }
 }
@@ -86,7 +86,7 @@ async function getList(id: number, isPublic: boolean): Promise<any> {
 
     return data[0];
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
   }
 }
 
@@ -98,7 +98,7 @@ async function createList(title: string, userId?: string): Promise<number | null
 
     return data[0]?.id;
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
     return null;
   }
 }
@@ -119,7 +119,7 @@ async function updateList(listData: List): Promise<boolean> {
 
     return data[0]?.id ? true : false;
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
     return false;
   }
 }
@@ -136,7 +136,7 @@ async function deleteList(listId: number, spotIds: number[]): Promise<boolean> {
 
     return data[0]?.id ? true : false;
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
     return false;
   }
 }
@@ -163,7 +163,7 @@ async function searchLists(searchStr: string, ownerId?: string): Promise<any[]> 
 
     return data;
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
     return [];
   }
 }
@@ -175,7 +175,7 @@ async function makeListPublic(listId: number): Promise<void> {
 
     if (error) throw new Error(error.message);
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
   }
 }
 
@@ -193,7 +193,7 @@ async function updateListImage(imageUrl: string, listId: number): Promise<boolea
 
     return data[0]?.id ? true : false;
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
     return false;
   }
 }
@@ -223,7 +223,7 @@ async function searchSpots(searchStr: string, ownerId?: string): Promise<any[]> 
 
     return data;
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
     return [];
   }
 }
@@ -262,7 +262,7 @@ async function saveSpot(spotData: Spot, ownerId?: string): Promise<boolean> {
       return data[0]?.id ? true : false;
     }
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
     return false;
   }
 }
@@ -275,7 +275,7 @@ async function deleteSpot(spotId: number): Promise<boolean> {
 
     return data[0]?.id ? true : false;
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
     return false;
   }
 }
@@ -294,7 +294,7 @@ async function updateSpotImage(imageUrl: string, spotId: number): Promise<boolea
 
     return data[0]?.id ? true : false;
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
     return false;
   }
 }
@@ -312,7 +312,7 @@ async function uploadImage(image: File, isSpot: boolean): Promise<string> {
 
     return data?.path;
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
     return '';
   }
 }
@@ -325,7 +325,7 @@ async function removeImage(fileName: string): Promise<any> {
 
     return data;
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
     return '';
   }
 }

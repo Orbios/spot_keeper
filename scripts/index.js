@@ -1,10 +1,10 @@
-require('dotenv').config({ path: `${__dirname}/../.env.local` });
+require('dotenv').config({path: `${__dirname}/../.env.local`});
 
 const {createClient} = require('@supabase/supabase-js');
 const fs = require('fs-extra');
 const {Client} = require('pg');
 
-const supabase = createClient(process.env.REACT_APP_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE);
+const supabase = createClient(process.env.VITE_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE);
 
 async function seedData() {
   const seedData = await fs.readJson('./scripts/seedData.json');

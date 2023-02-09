@@ -32,7 +32,7 @@ async function getCurrentUser(): Promise<User | null> {
     return user;
   } catch (err: any) {
     // eslint-disable-next-line
-    console.log(err.message);
+    console.log(err?.message);
     return null;
   }
 }
@@ -58,7 +58,7 @@ async function signUp(userData: SignUpDto): Promise<string | null> {
 
     return null;
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
     return null;
   }
 }
@@ -69,7 +69,7 @@ async function signOut() {
 
     if (error) throw new Error(error.message);
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
   }
 }
 
@@ -86,7 +86,7 @@ async function login(loginData: LogInDto): Promise<string | undefined> {
 
     return session?.access_token;
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
   }
 }
 
@@ -95,20 +95,20 @@ async function googleLogin(): Promise<void> {
     const {error} = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: 'http://localhost:4000'
+        redirectTo: config.baseUrl
       }
     });
 
     if (error) throw new Error(error.message);
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
   }
 }
 
 async function passwordForgot(email: string): Promise<void> {
   try {
     const {data, error} = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: 'http://localhost:4000/password-reset'
+      redirectTo: `${config.baseUrl}/password-reset`
     });
 
     if (error) throw new Error(error.message);
@@ -117,7 +117,7 @@ async function passwordForgot(email: string): Promise<void> {
       uiHelper.showMessage(`We've just dropped you an email. Please check your mail to reset your password. Thanks!`);
     }
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
   }
 }
 
@@ -129,7 +129,7 @@ async function resetPassword(newPassword: string): Promise<User | null> {
 
     return data?.user;
   } catch (err: any) {
-    uiHelper.showError(err.message);
+    uiHelper.showError(err?.message);
     return null;
   }
 }

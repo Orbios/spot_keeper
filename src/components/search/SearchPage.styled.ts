@@ -4,6 +4,8 @@ import {colors, mediaQueries, mobileSidePanelHeight} from 'styles/shared';
 
 import TextInput from 'components/common/TextInput';
 
+import searchIcon from 'assets/search-icon.svg';
+
 export const wrapper = styled.div`
   padding: 24px 34px;
   overflow-y: auto;
@@ -29,7 +31,7 @@ export const searchWrapper = styled.div`
 export const searchInput = styled(TextInput)`
   min-width: 340px;
   width: 340px;
-  background: url(/images/search-icon.svg) no-repeat scroll;
+  background: url(${searchIcon}) no-repeat scroll;
   background-position: 2% 50%;
   background-color: ${colors.white};
   padding-left: 40px;
