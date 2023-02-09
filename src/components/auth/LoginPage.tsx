@@ -2,6 +2,8 @@ import {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {Container, Row, Col, Button} from 'components/bootstrap';
 import {isEmpty} from 'lodash';
+import {FcGoogle} from 'react-icons/fc';
+import styled from 'styled-components';
 
 import userActions from 'actions/userActions';
 import {useAppDispatch} from 'hooks';
@@ -10,6 +12,15 @@ import validationHelper from 'helpers/validationHelper';
 
 import AppIcon from 'components/common/AppIcon';
 import TextInput from 'components/common/TextInput';
+
+const GoogleButton = styled(Button)`
+  display: flex;
+  align-items: center;
+`;
+
+const GoogleIcon = styled(FcGoogle)`
+  margin-right: 8px;
+`;
 
 function LoginPage() {
   const dispatch = useAppDispatch();
@@ -103,9 +114,10 @@ function LoginPage() {
                 </Button>
               </Col>
               <Col className="d-flex justify-content-end">
-                <Button size="lg" onClick={loginWithGoogle}>
+                <GoogleButton variant="outline-secondary" size="lg" onClick={loginWithGoogle}>
+                  <GoogleIcon />
                   Google
-                </Button>
+                </GoogleButton>
               </Col>
             </Row>
           </form>
