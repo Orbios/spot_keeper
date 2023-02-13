@@ -56,6 +56,10 @@ export const imageContainer = styled.div<{isEditMode: boolean}>`
   }
 `;
 
+export const image = styled.img`
+  object-fit: cover;
+`;
+
 export const hoverContainer = styled.div`
   color: ${colors.white};
 `;

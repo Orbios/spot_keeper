@@ -57,7 +57,7 @@ function LocationImage({title, url, isSpot, isEditMode, onImageUpdateHandler}: P
     if (url) {
       const imagePath = `${config.supabase.storageUrl}${url}`;
 
-      imageToRender = <img src={imagePath} alt={title} width={spotImageSize} height={spotImageSize} />;
+      imageToRender = <styled.image src={imagePath} alt={title} width={spotImageSize} height={spotImageSize} />;
     } else {
       imageToRender = isSpot ? <SiGooglemaps size="46" /> : <FaMapMarkedAlt size="46" />;
     }

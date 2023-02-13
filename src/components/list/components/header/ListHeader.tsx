@@ -68,7 +68,7 @@ function ListHeader({list, editMode, onEditList, onDeleteList, onMakePublic, onI
     if (imageUrl) {
       const imagePath = `${config.supabase.storageUrl}${imageUrl}`;
 
-      imageToRender = <img src={imagePath} alt={list.title} width={listImageSize} height={listImageSize} />;
+      imageToRender = <styled.image src={imagePath} alt={list.title} width={listImageSize} height={listImageSize} />;
     } else {
       imageToRender = <FaMapMarkedAlt size="60" />;
     }
