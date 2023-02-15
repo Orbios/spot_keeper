@@ -1,6 +1,8 @@
+import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
 import AppIcon from 'components/common/AppIcon';
+import ImageEditor from 'components/common/ImageEditor';
 import LocationImage from './components/LocationImage';
 
 import * as styled from './Locationtem.styled';
@@ -17,6 +19,8 @@ function Locationtem({item, isEditMode = false, onEditItem, onDeleteItem, onImag
   const navigate = useNavigate();
 
   const isSpot = item.hasOwnProperty('mapLink');
+
+  const [originalImage, setOriginalImage] = useState<string | null>(null);
 
   function handleClick() {
     if (isSpot) {
@@ -44,6 +48,7 @@ function Locationtem({item, isEditMode = false, onEditItem, onDeleteItem, onImag
 
   function render() {
     const actionsVisible = isSpot && isEditMode;
+    const isImageEditorVisible = originalImage ? true : false;
 
     return (
       <styled.wrapper>
@@ -52,7 +57,7 @@ function Locationtem({item, isEditMode = false, onEditItem, onDeleteItem, onImag
           url={item.imageUrl}
           isSpot={isSpot}
           isEditMode={isEditMode}
-          onImageUpdateHandler={onImageUpdateHandler}
+          onSelectImage={image => setOriginalImage(image)}
         />
 
         <styled.contentContainer>
@@ -73,6 +78,15 @@ function Locationtem({item, isEditMode = false, onEditItem, onDeleteItem, onImag
 
           <div>{item.description}</div>
         </styled.contentContainer>
+
+        {isImageEditorVisible && (
+          <ImageEditor
+            visible={isImageEditorVisible}
+            originalImage={originalImage}
+            close={() => setOriginalImage(null)}
+            saveImage={onImageUpdateHandler}
+          />
+        )}
       </styled.wrapper>
     );
   }

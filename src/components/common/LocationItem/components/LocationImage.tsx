@@ -15,10 +15,10 @@ interface Props {
   url?: string;
   isSpot: boolean;
   isEditMode: boolean;
-  onImageUpdateHandler?: (image: any) => void;
+  onSelectImage: (image: any) => void;
 }
 
-function LocationImage({title, url, isSpot, isEditMode, onImageUpdateHandler}: Props) {
+function LocationImage({title, url, isSpot, isEditMode, onSelectImage}: Props) {
   const inputRef = useRef<any>(null);
 
   const [isShown, setIsShown] = useState(false);
@@ -45,10 +45,10 @@ function LocationImage({title, url, isSpot, isEditMode, onImageUpdateHandler}: P
   }
 
   async function handleFileChange(e) {
-    if (!isEditMode || !onImageUpdateHandler) return;
+    if (!isEditMode) return;
 
     const image = e.target.files[0];
-    onImageUpdateHandler(image);
+    onSelectImage(image);
   }
 
   function render() {

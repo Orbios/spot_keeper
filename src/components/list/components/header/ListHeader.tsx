@@ -7,6 +7,7 @@ import uiHelper from 'helpers/uiHelper';
 import navigationHelper from 'helpers/navigationHelper';
 
 import AppIcon from 'components/common/AppIcon';
+import ImageEditor from 'components/common/ImageEditor';
 
 import * as styled from './ListHeader.styled';
 
@@ -25,6 +26,7 @@ function ListHeader({list, editMode, onEditList, onDeleteList, onMakePublic, onI
   const inputRef = useRef<any>(null);
 
   const [isShown, setIsShown] = useState(false);
+  const [originalImage, setOriginalImage] = useState<string | null>(null);
 
   useEffect(() => {
     return () => {
@@ -57,7 +59,7 @@ function ListHeader({list, editMode, onEditList, onDeleteList, onMakePublic, onI
     if (!editMode || !onImageUpdateHandler) return;
 
     const image = e.target.files[0];
-    onImageUpdateHandler(image);
+    setOriginalImage(image);
   }
 
   function renderImage() {
@@ -94,6 +96,7 @@ function ListHeader({list, editMode, onEditList, onDeleteList, onMakePublic, onI
 
   function render() {
     const publicUrl = navigationHelper.getSharedListUrl(list.id);
+    const isImageEditorVisible = originalImage ? true : false;
 
     return (
       <styled.container>
@@ -122,6 +125,15 @@ function ListHeader({list, editMode, onEditList, onDeleteList, onMakePublic, onI
 
           <div>{list.description}</div>
         </div>
+
+        {isImageEditorVisible && (
+          <ImageEditor
+            visible={isImageEditorVisible}
+            originalImage={originalImage}
+            close={() => setOriginalImage(null)}
+            saveImage={onImageUpdateHandler}
+          />
+        )}
       </styled.container>
     );
   }
