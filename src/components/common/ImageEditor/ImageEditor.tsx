@@ -2,6 +2,8 @@ import {useState, useRef} from 'react';
 import {Modal, Button} from 'components/bootstrap';
 import AvatarEditor from 'react-avatar-editor';
 
+import utils from 'helpers/utils';
+
 import * as styled from './ImageEditor.styled';
 
 interface Props {
@@ -23,8 +25,10 @@ function ImageEditor({visible, originalImage, close, saveImage}: Props) {
 
     const canvasScaled = editor.current.getImageScaledToCanvas();
 
+    const randomImageName = utils.getRandomUid();
+
     canvasScaled.toBlob(blob => {
-      const updatedImage = new File([blob], originalImage.name, {type: originalImage.type});
+      const updatedImage = new File([blob], randomImageName, {type: originalImage.type});
       saveImage(updatedImage);
       close();
     });
