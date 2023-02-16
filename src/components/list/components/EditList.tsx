@@ -15,20 +15,15 @@ interface Props {
 }
 
 function EditList({visible, list, save, close, onChange}: Props) {
-  const [errors, setErrors] = useState({title: '', description: ''});
+  const [errors, setErrors] = useState({title: ''});
 
   function formIsValid() {
     const formErrors = {
-      title: '',
-      description: ''
+      title: ''
     };
 
     if (!list.title) {
       formErrors.title = 'Title field is required.';
-    }
-
-    if (!list.description) {
-      formErrors.description = 'Description field is required.';
     }
 
     setErrors(formErrors);
@@ -63,7 +58,6 @@ function EditList({visible, list, save, close, onChange}: Props) {
           value={list.description}
           onChange={onChange}
           placeholder="Description"
-          error={errors.description}
         />
       </Modal.Body>
       <Modal.Footer>

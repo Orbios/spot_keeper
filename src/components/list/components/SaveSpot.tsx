@@ -15,21 +15,16 @@ interface Props {
 }
 
 function SaveSpot({spot, save, close, onChange, visible}: Props) {
-  const [errors, setErrors] = useState({title: '', description: '', mapLink: ''});
+  const [errors, setErrors] = useState({title: '', mapLink: ''});
 
   function formIsValid() {
     const formErrors = {
       title: '',
-      description: '',
       mapLink: ''
     };
 
     if (!spot.title) {
       formErrors.title = 'Title field is required.';
-    }
-
-    if (!spot.description) {
-      formErrors.description = 'Description field is required.';
     }
 
     if (!spot.mapLink) {
@@ -65,7 +60,14 @@ function SaveSpot({spot, save, close, onChange, visible}: Props) {
             error={errors.title}
           />
 
-          <TextInput name="mapLink" label="Map Link" value={spot.mapLink} onChange={onChange} placeholder="Map Link" />
+          <TextInput
+            name="mapLink"
+            label="Map Link"
+            value={spot.mapLink}
+            onChange={onChange}
+            placeholder="Map Link"
+            error={errors.mapLink}
+          />
 
           <TextAreaInput
             name="description"
@@ -73,7 +75,6 @@ function SaveSpot({spot, save, close, onChange, visible}: Props) {
             value={spot.description}
             onChange={onChange}
             placeholder="Description"
-            error={errors.description}
           />
         </Modal.Body>
         <Modal.Footer>

@@ -76,7 +76,7 @@ function Locationtem({item, isEditMode = false, onEditItem, onDeleteItem, onImag
             )}
           </styled.titleWrapper>
 
-          <div>{item.description}</div>
+          <div>{item.description || item.title}</div>
         </styled.contentContainer>
 
         {isImageEditorVisible && (
