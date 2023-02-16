@@ -123,7 +123,7 @@ function ListHeader({list, editMode, onEditList, onDeleteList, onMakePublic, onI
             {list.title}
           </styled.title>
 
-          <div>{list.description || list.title}</div>
+          <styled.description>{list.description || list.title}</styled.description>
         </div>
 
         {isImageEditorVisible && (

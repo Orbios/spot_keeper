@@ -25,6 +25,10 @@ export const title = styled.div`
   font-size: 22px;
 `;
 
+export const description = styled.div`
+  white-space: pre-line;
+`;
+
 export const actionsContainer = styled.div`
   display: flex;
 `;

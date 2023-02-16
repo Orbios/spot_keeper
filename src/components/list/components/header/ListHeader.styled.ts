@@ -83,3 +83,7 @@ export const title = styled.div<{editMode: boolean}>`
     margin-top: 35px;
   }
 `;
+
+export const description = styled.div`
+  white-space: pre-line;
+`;
