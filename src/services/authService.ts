@@ -1,4 +1,5 @@
 import Cookies from 'js-cookie';
+import {isEmpty} from 'lodash';
 import {createClient, User} from '@supabase/supabase-js';
 
 import config from 'config';
@@ -52,11 +53,13 @@ async function signUp(userData: SignUpDto): Promise<string | null> {
 
     if (error) throw new Error(error.message);
 
-    if (data.user) {
-      return 'Activation email was send. Please, check you inbox.';
+    if (!data.user) return null;
+
+    if (isEmpty(data?.user?.identities)) {
+      throw new Error('This user already exists.');
     }
 
-    return null;
+    return 'Activation email was send. Please, check you inbox.';
   } catch (err: any) {
     uiHelper.showError(err?.message);
     return null;
