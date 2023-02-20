@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
+import TextInput from 'components/common/TextInput';
+
 import {listHeaderHeight, colors, mediaQueries, mobileSidePanelHeight} from 'styles/shared';
+
+import searchIcon from 'assets/search-icon.svg';
 
 export const bodyContainer = styled.div`
   padding: 24px 32px;
@@ -15,10 +19,22 @@ export const bodyContainer = styled.div`
   }
 `;
 
-export const addSpotContainer = styled.div`
+export const bodyHeaderContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: baseline;
+`;
+
+export const searchSpotInput = styled(TextInput)`
+  background: url(${searchIcon}) no-repeat scroll;
+  background-position: 2% 50%;
+  background-color: ${colors.white};
+  padding-left: 40px;
+  min-width: 350px;
+
+  @media ${mediaQueries.tablet} {
+    min-width: auto;
+  }
 `;
 
 export const addListAction = styled.div`

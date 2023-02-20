@@ -28,18 +28,41 @@ function ListPage() {
   const user = useAppSelector(state => state.user.current);
 
   const [list, setList] = useState<List | null>(null);
+  const [displaySpots, setDisplaySpots] = useState<Spot[]>([]);
   const [spotToEdit, setSpotToEdit] = useState<Spot | null>(null);
   const [listToEdit, setListToEdit] = useState<List | null>(null);
+
+  const [searchStr, setSearchStr] = useState<string>('');
 
   useEffect(() => {
     loadList();
   }, [listId]);
+
+  useEffect(() => {
+    filterSpots();
+  }, [searchStr]);
 
   async function loadList() {
     if (!listId) return;
 
     const response = await dispatch(listActions.loadListById(Number(listId)));
     setList(response);
+    setDisplaySpots(response.spots);
+    setSearchStr('');
+  }
+
+  function filterSpots() {
+    if (!list) return;
+
+    const filteredSpots = list.spots.filter(spot => {
+      const search = searchStr.trim().toLowerCase();
+
+      if (isEmpty(search)) return true;
+
+      return spot.title.toLowerCase().includes(searchStr) || spot.description.toLowerCase().includes(searchStr);
+    });
+
+    setDisplaySpots(filteredSpots);
   }
 
   function onAddSpot() {
@@ -225,15 +248,22 @@ function ListPage() {
         />
 
         <styled.bodyContainer>
-          <styled.addSpotContainer>
+          <styled.bodyHeaderContainer>
+            <styled.searchSpotInput
+              name="search"
+              placeholder="Search spots"
+              value={searchStr}
+              onChange={(field, value) => setSearchStr(value)}
+            />
+
             <styled.addListAction onClick={onAddSpot}>
               <AppIcon icon="plus" />
               <styled.addListActionLabel>Add spot</styled.addListActionLabel>
             </styled.addListAction>
-          </styled.addSpotContainer>
+          </styled.bodyHeaderContainer>
 
           {anySpots &&
-            list.spots.map(spot => (
+            displaySpots.map(spot => (
               <Locationtem
                 key={spot.id}
                 item={spot}
@@ -245,6 +275,8 @@ function ListPage() {
             ))}
 
           {!anySpots && <div>Let's add some spots!</div>}
+
+          {anySpots && searchStr && isEmpty(displaySpots) && <div>No spots found.</div>}
         </styled.bodyContainer>
 
         {saveSpotVisible && spotToEdit && (
