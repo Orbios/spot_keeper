@@ -248,7 +248,7 @@ function ListPage() {
         />
 
         <styled.bodyContainer>
-          <styled.bodyHeaderContainer>
+          <styled.toolsPanel>
             <styled.searchSpotInput
               name="search"
               placeholder="Search spots"
@@ -260,23 +260,25 @@ function ListPage() {
               <AppIcon icon="plus" />
               <styled.addListActionLabel>Add spot</styled.addListActionLabel>
             </styled.addListAction>
-          </styled.bodyHeaderContainer>
+          </styled.toolsPanel>
 
-          {anySpots &&
-            displaySpots.map(spot => (
-              <Locationtem
-                key={spot.id}
-                item={spot}
-                isEditMode={true}
-                onEditItem={onEditSpot}
-                onDeleteItem={onDeleteSpot}
-                onImageUpdate={updateSpotImage}
-              />
-            ))}
+          <styled.scrollableContainer>
+            {anySpots &&
+              displaySpots.map(spot => (
+                <Locationtem
+                  key={spot.id}
+                  item={spot}
+                  isEditMode={true}
+                  onEditItem={onEditSpot}
+                  onDeleteItem={onDeleteSpot}
+                  onImageUpdate={updateSpotImage}
+                />
+              ))}
 
-          {!anySpots && <div>Let's add some spots!</div>}
+            {!anySpots && <div>Let's add some spots!</div>}
 
-          {anySpots && searchStr && isEmpty(displaySpots) && <div>No spots found.</div>}
+            {anySpots && searchStr && isEmpty(displaySpots) && <div>No spots found.</div>}
+          </styled.scrollableContainer>
         </styled.bodyContainer>
 
         {saveSpotVisible && spotToEdit && (
